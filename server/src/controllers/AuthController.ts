@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import prisma from "../config/db.config.js";
-
-interface bodyType {
+interface LoginPayloadType {
   name: string;
   email: string;
   oauth_id: string;
@@ -13,7 +12,7 @@ interface bodyType {
 class AuthController {
   static async login(req: Request, res: Response) {
     try {
-      const body: bodyType = req.body;
+      const body: LoginPayloadType = req.body;
       let findUser = await prisma.user.findUnique({
         where: {
           email: body.email,
