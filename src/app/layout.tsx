@@ -11,8 +11,8 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "QuickChat",
-  description: "Quick Chat App",
+  title: "LinkUp",
+  description: "Chat App",
 };
 
 export default function RootLayout({
